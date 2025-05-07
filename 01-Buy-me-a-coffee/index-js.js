@@ -5,6 +5,7 @@ const connectButton = document.getElementById('connect-btn');
 const fundButton = document.getElementById('fund-btn');
 const ethAmountInput = document.getElementById('ethAmount');
 const balanceButton = document.getElementById('balance-btn');
+const withdrawButton = document.getElementById('withdraw-btn');
 
 
 let walletClient;
@@ -56,6 +57,36 @@ const fund = async () => {
     }
 }
 
+const withdraw = async () => {
+    console.log("Initiating withdraw...");
+
+    if (typeof window.ethereum !== 'undefined') {
+        const walletClient = createWalletClient({
+            transport: custom(window.ethereum)
+        });
+        const [connectedAccounts] = await walletClient.requestAddresses();
+        const currentChain = await getCurrentChain(walletClient);
+        connectButton.innerHTML = "Connected!";
+
+        const publicClient = createPublicClient({
+            transport: custom(window.ethereum)
+        });
+        const { request } = await publicClient.simulateContract({
+            address: contractAddress,
+            abi: abi,
+            functionName: "withdraw",
+            account: connectedAccounts,
+            chain: currentChain,
+            value: 0n // Explicitly 0 ether
+        });
+
+        const hash = await walletClient.writeContract(request);
+        console.log(`Withdraw transaction hash: ${hash}`);
+    } else {
+        alert("Metamask is not installed");
+    }
+}
+
 async function getCurrentChain(client) {
     const chainId = await client.getChainId()
     const currentChain = defineChain({
@@ -91,3 +122,4 @@ const getBalance = async () => {
 connectButton.onclick = connect;
 fundButton.onclick = fund;
 balanceButton.onclick = getBalance;
+withdrawButton.onclick = withdraw;
