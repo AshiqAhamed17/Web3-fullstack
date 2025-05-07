@@ -1,0 +1,142 @@
+/* Reset + Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #1c1c1e;
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre-big.png");
+  background-repeat: repeat;
+  color: #e0e0e0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  background-color: rgba(17, 17, 17, 0.8);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #a9a9a9;
+  margin-top: 0.5rem;
+}
+
+/* Main Container */
+.container {
+  background-color: rgba(17, 17, 17, 0.95);
+  border: 1px solid #2a2a2c;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  margin: 2rem auto;
+  max-width: 400px;
+  width: 90%;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.05);
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #00ffff, #00bfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  color: #cccccc;
+  margin-bottom: 0.5rem;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #1f1f21;
+  color: #e0e0e0;
+  border: 1px solid #2e2e2e;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  transition: border 0.2s ease;
+}
+
+input[type="number"]:focus {
+  border: 1px solid #00ffff;
+  outline: none;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.8rem;
+  background: linear-gradient(135deg, #00ffff, #00bfff);
+  color: #111111;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #00e0e0, #0099cc);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.2rem 1rem;
+  background-color: rgba(17, 17, 17, 0.8);
+  border-top: 1px solid #2a2a2c;
+  margin-top: auto;
+}
+
+footer p {
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+footer .socials a {
+  margin: 0 10px;
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer .socials a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+  }
+}

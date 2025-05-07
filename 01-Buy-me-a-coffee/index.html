@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy me a coffee</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy Me a Coffee ☕</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <button id="connect-btn">Connect wallet</button>
-    <button id="balance-btn">Get Balance</button>
-    <button id="withdraw-btn">Withdraw</button>
-    <br>
+    <header>
+        <div class="logo">☕ Buy Me a Coffee</div>
+        <p class="tagline">Support the Builder. One Coffee at a Time.</p>
+    </header>
 
-    <label for="ethAmount"> ETH Amount </label>
-    <input id="ethAmount" type="number" placeholder="0.1" />
-    <button id="fund-btn">Buy Coffee</button>
+    <main class="container">
+        <h1>Send Coffee in Crypto</h1>
 
+        <button id="connect-btn">Connect Wallet</button>
+        <button id="balance-btn">Get Balance</button>
+        <button id="withdraw-btn">Withdraw</button>
 
-</body>
+        <label for="ethAmount">ETH Amount</label>
+        <input id="ethAmount" type="number" placeholder="0.1" />
+
+        <button id="fund-btn">Buy Coffee</button>
+    </main>
+
+    <footer>
+        <p>Made by 0xArektQ</p>
+        <div class="socials">
+            <a href="https://github.com/AshiqAhamed17" target="_blank">GitHub</a>
+            <a href="https://twitter.com/AshiqAhamed_" target="_blank">Twitter</a>
+        </div>
+    </footer>
+
     <script src="index.js" type="module"></script>
+</body>
+
 </html>
