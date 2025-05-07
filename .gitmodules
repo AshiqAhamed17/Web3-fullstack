@@ -1,0 +1,3 @@
+[submodule "TSender"]
+	path = TSender
+	url = https://github.com/AshiqAhamed17/TSender.git
